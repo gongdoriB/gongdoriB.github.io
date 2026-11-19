@@ -8,7 +8,7 @@ Personal website of **Gihyun Bae (배기현)** — undergraduate researcher at C
 | --- | --- |
 | [About](https://gongdorib.github.io/) | Bio, research interests, news |
 | [Research](https://gongdorib.github.io/research.html) | Research projects, publications & presentations |
-| [Projects](https://gongdorib.github.io/projects.html) | Websites, apps and system design work |
+| [Projects](https://gongdorib.github.io/projects.html) | G-NOISE (XR urban-noise prototype), rehabilitation clinic database |
 | [CV](https://gongdorib.github.io/cv.html) | Education, experience, awards, PDF CV |
 
 Plain HTML/CSS/JS with no build step — edit the `.html` files and push. Light/dark theme follows the system setting and can be toggled.

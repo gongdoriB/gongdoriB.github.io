@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Gihyun Bae</title>
-  <meta name="description" content="Design, web and system projects by Gihyun Bae, Chung-Ang University.">
+  <meta name="description" content="Projects by Gihyun Bae: G-NOISE, an XR prototype for exploring urban noise responses, and a rehabilitation clinic database.">
   <script>try{const t=localStorage.getItem("theme");document.documentElement.classList.toggle("dark",t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches));}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,86 +32,66 @@
 <main>
   <h1 class="page-title">Projects</h1>
   <div class="title-line"></div>
-  <p>Things I have designed and built outside of research papers — interactive websites, apps and data systems. Research projects are on the <a href="research.html">Research</a> page.</p>
+  <p>Systems I have planned and built beyond research papers. Research projects and publications are on the <a href="research.html">Research</a> page.</p>
 
-  <h2>Design &amp; Build</h2>
-  <div class="proj-grid">
+  <!-- G-NOISE -->
+  <article class="feature" id="g-noise">
+    <div class="eyebrow">Selected project · Aug 2026</div>
+    <h2 class="feature-title">G-NOISE <span class="badge">Excellence Award</span></h2>
+    <p class="feature-sub">Exploring urban noise responses in a virtual city</p>
+    <div class="meta">Team leader, PM &amp; AI engineer · 2026 Gyeonggi Virtual Convergence Content Challenge (team award)</div>
 
-    <article class="proj">
-      <a class="proj-thumb" href="https://gongdorib.github.io/campus-psych-lab/"><img src="assets/projects/campus-psych-lab.png" alt="Campus Psych Lab screenshot" loading="lazy"></a>
-      <div class="proj-body">
-        <h3>Campus Psych Lab</h3>
-        <div class="meta">Web service · 2025 – 2026</div>
-        <p>A self-reflection web service for university students that links mood journaling, psychology quizzes and campus-life columns, so students can look back on their own patterns of stress and emotion. Not a diagnostic tool.</p>
-        <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">human-centered AI</span><span class="tag">UX</span></div>
-        <div class="proj-links"><a href="https://gongdorib.github.io/campus-psych-lab/">Live ↗</a><a href="https://github.com/gongdoriB/campus-psych-lab">Code ↗</a></div>
-      </div>
-    </article>
+    <figure class="hero-shot">
+      <img src="assets/projects/gnoise_compare.jpg" alt="Aerial view of the G-NOISE virtual city block, comparing a noise barrier on/off and baseline versus managed traffic" loading="lazy">
+      <figcaption>The core of G-NOISE is the comparison: barrier off ↔ on, and baseline ↔ managed traffic, heard from the same spot.</figcaption>
+    </figure>
 
-    <article class="proj">
-      <div class="proj-thumb placeholder imu" aria-hidden="true"><span>IMU</span></div>
-      <div class="proj-body">
-        <h3>FreeForm</h3>
-        <div class="meta">App prototype · 2026</div>
-        <p>Weight-training feedback app that reads knee-mounted IMU sensors in real time and scores squat form — left/right balance, range of motion and tempo consistency — with live warnings and per-rep reports.</p>
-        <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">IMU sensing</span><span class="tag">Supabase</span></div>
-        <div class="proj-links"><a href="https://github.com/gongdoriB/FreeFormApp_beta">Code ↗</a></div>
-      </div>
-    </article>
+    <p>G-NOISE is an early digital-twin-style prototype: a reduced-scale city block in Unreal Engine that reflects real urban noise recordings. Users inspect noise sources in the streetscape, then compare preset responses — noise barriers and traffic management — before and after.</p>
+    <p><strong>My role.</strong> I led overall system planning and trained the AI audio model, a multi-label MLP classifier on pretrained YAMNet embeddings. It turns recordings into noise events (type, onset, duration, confidence) exported as JSON, which the virtual environment reads to place and play the noise sources. Teammates built the Unreal environment and the JSON integration.</p>
 
-    <article class="proj">
-      <a class="proj-thumb" href="https://gongdorib.github.io/REUX_project/"><img src="assets/projects/reux.png" alt="REUX website screenshot" loading="lazy"></a>
-      <div class="proj-body">
-        <h3>REUX</h3>
-        <div class="meta">Interactive website · 2025</div>
-        <p>Brand site for a fictional UX consultancy, built to show the difference between bad and good UX through scroll-driven animation, video, a deliberately broken mock page and a before/after comparison.</p>
-        <div class="tags"><span class="tag">GSAP</span><span class="tag">ScrollTrigger</span><span class="tag">interaction design</span></div>
-        <div class="proj-links"><a href="https://gongdorib.github.io/REUX_project/">Live ↗</a><a href="https://github.com/gongdoriB/REUX_project">Code ↗</a></div>
-      </div>
-    </article>
+    <h3 class="sub-h">How it works</h3>
+    <ol class="flow">
+      <li><span class="step">Audio input</span><span class="detail">Urban recordings · 16 kHz mono, 10 s windows</span></li>
+      <li><span class="step">AI analysis</span><span class="detail">YAMNet embeddings → multi-label MLP</span></li>
+      <li><span class="step">Data handoff</span><span class="detail">Noise events as <code>result.json</code></span></li>
+      <li><span class="step">XR interaction</span><span class="detail">Unreal polls JSON, places sources, compares scenarios</span></li>
+    </ol>
+    <p class="note">Six noise classes: road traffic, construction, residential, industrial, railway and aircraft.</p>
 
-    <article class="proj">
-      <div class="proj-thumb placeholder db" aria-hidden="true"><span>ER</span></div>
-      <div class="proj-body">
-        <h3>Rehabilitation Clinic Database</h3>
-        <div class="meta">Database design · 2026</div>
-        <p>Relational schema for the full workflow of a rehabilitation clinic — injuries as their own entity, time-based clinical tests, sessions, and prescribed versus performed exercises — designed for analysis rather than as an app.</p>
-        <div class="tags"><span class="tag">SQL</span><span class="tag">ER modeling</span><span class="tag">normalization</span></div>
-        <div class="proj-links"><a href="https://github.com/gongdoriB/rehabilitation-clinic-db">Code ↗</a></div>
-      </div>
-    </article>
+    <h3 class="sub-h">Competition demonstration</h3>
+    <div class="gallery">
+      <figure><img src="assets/projects/gnoise_78.jpg" alt="Sound Analysis panel showing detected noise categories in the virtual street" loading="lazy"><figcaption><strong>Inspect noise sources</strong> <span class="ts">01:18</span><br>The Sound Analysis panel shows detected noise categories in the street.</figcaption></figure>
+      <figure><img src="assets/projects/gnoise_102.jpg" alt="Street before any noise response is applied" loading="lazy"><figcaption><strong>Review the baseline</strong> <span class="ts">01:42</span><br>The street before any response is applied.</figcaption></figure>
+      <figure><img src="assets/projects/gnoise_113.jpg" alt="Noise barrier and traffic management applied together" loading="lazy"><figcaption><strong>Apply preset responses</strong> <span class="ts">01:53</span><br>A noise barrier and traffic management applied together.</figcaption></figure>
+      <figure><img src="assets/projects/gnoise_138.jpg" alt="User placing noise barriers at different positions" loading="lazy"><figcaption><strong>Explore barrier placement</strong> <span class="ts">02:18</span><br>Users place barriers at different positions and compare them.</figcaption></figure>
+    </div>
 
-    <article class="proj">
-      <div class="proj-thumb placeholder agent" aria-hidden="true"><span>CSV → report</span></div>
-      <div class="proj-body">
-        <h3>Experiment-Result Review Agent</h3>
-        <div class="meta">Pre-SKALA AI Bootcamp, SK AX · Nov 2026</div>
-        <p>An agent that gathers and checks many experiment-result CSV files, then writes a review spreadsheet and a lab-meeting report. Tested on public BIG-bench results, including duplicate rows and missing files.</p>
-        <div class="tags"><span class="tag">LLM agent</span><span class="tag">data validation</span></div>
-      </div>
-    </article>
+    <h3 class="sub-h">Model check</h3>
+    <div class="table-wrap">
+      <table class="metrics">
+        <thead><tr><th>Model</th><th>Macro F1</th><th>Accuracy</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr><td>v2 (previous)</td><td>0.6086</td><td>0.7121</td><td>Baseline</td></tr>
+          <tr class="best"><td>v3 (improved)</td><td>0.6575</td><td>0.7563</td><td>Hard negatives, threshold tuning</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Evaluated on 300 synthetic clips mixing two or three noise sources — synthetic mixtures, not field recordings. Validation on field data is the next step.</p>
 
-  </div>
+    <div class="tags"><span class="tag">YAMNet</span><span class="tag">multi-label audio classification</span><span class="tag">Unreal Engine</span><span class="tag">XR</span><span class="tag">digital twin</span></div>
+  </article>
 
-  <h2>Early Practice</h2>
-  <div class="proj-grid small">
-    <article class="proj">
-      <a class="proj-thumb placeholder agent" href="https://gongdorib.github.io/todoweb/" aria-label="Todo Web live demo"><span>☑ todo</span></a>
-      <div class="proj-body">
-        <h3>Todo Web</h3>
-        <div class="meta">JavaScript · 2024</div>
-        <div class="proj-links"><a href="https://gongdorib.github.io/todoweb/">Live ↗</a><a href="https://github.com/gongdoriB/todoweb">Code ↗</a></div>
-      </div>
-    </article>
-    <article class="proj">
-      <a class="proj-thumb" href="https://gongdorib.github.io/kokoa-clone-2024/"><img src="assets/projects/kokoa.png" alt="Messenger clone screenshot" loading="lazy"></a>
-      <div class="proj-body">
-        <h3>Messenger UI Clone</h3>
-        <div class="meta">HTML/CSS · 2024</div>
-        <div class="proj-links"><a href="https://gongdorib.github.io/kokoa-clone-2024/">Live ↗</a><a href="https://github.com/gongdoriB/kokoa-clone-2024">Code ↗</a></div>
-      </div>
-    </article>
-  </div>
+  <h2>Also</h2>
+  <article class="proj proj-row">
+    <a class="proj-thumb" href="https://github.com/gongdoriB/rehabilitation-clinic-db"><img src="assets/projects/rehab_erd.png" alt="Conceptual ERD of the rehabilitation clinic database" loading="lazy"></a>
+    <div class="proj-body">
+      <h3>Rehabilitation Clinic Database</h3>
+      <div class="meta">Database design · MySQL · 2026</div>
+      <p>A relational schema for the full workflow of a rehabilitation clinic, built for analysis rather than as an app. Injuries are their own entity so one patient can carry several over time; clinical test definitions are separated from measured results to keep time-series records; and prescribed exercises are separated from performed ones, so adherence and skipped exercises can be queried directly. Includes DDL, analysis views and sample data.</p>
+      <div class="tags"><span class="tag">MySQL</span><span class="tag">ER modeling</span><span class="tag">normalization</span><span class="tag">SQL views</span></div>
+      <div class="proj-links"><a href="https://github.com/gongdoriB/rehabilitation-clinic-db">Code ↗</a></div>
+    </div>
+  </article>
 </main>
 
 <footer>© <span id="year">2026</span> Gihyun Bae</footer>

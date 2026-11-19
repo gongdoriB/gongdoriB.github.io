@@ -41,8 +41,8 @@
     <div class="meta">CUAI Advanced Track · two-person team, first author · Jul 2026 – present <span class="badge">Grand Prize</span></div>
     <p>How badly does a vision-language model misread a GUI when the user's question and the on-screen text are in different languages, and where does the loss come from?</p>
     <ul>
-      <li><strong>Initial study (summer 2026).</strong> A fully crossed 6×6 query–GUI language design over 2,195 MPR-GUI-Bench items with two VLMs, analysed with item-level GLMMs. The mismatch penalty concentrated in text-dependent relational reasoning (about 12%p) and was near zero for text-independent items. A two-stage localization method recovered part of it (+4.22%p, +8.80%p).</li>
-      <li><strong>Follow-up (Sep 2026 – present, preliminary).</strong> Query variants that change referent names and sentence language separately, across six languages and seven VLMs. Replacing only the referent names with on-screen text improved accuracy for all seven models (+4.7 to +12.0%p); changing only the sentence language slightly lowered it. Manuscript in preparation.</li>
+      <li><strong>Initial study (summer 2026).</strong> A fully crossed 6×6 query–GUI language design over 2,195 MPR-GUI-Bench items with Qwen2.5-VL-7B and InternVL2.5-8B, analysed with item-level GLMMs. The mismatch penalty concentrated in text-dependent relational reasoning (about 12%p) and was near zero for text-independent items. A two-stage localization method recovered part of it (+4.22%p, +8.80%p).</li>
+      <li><strong>Follow-up (Sep 2026 – present).</strong> Extending the study to six languages and seven VLMs, separating the effects of on-screen referent names from sentence language, and comparing machine-translated queries with queries that use on-screen names. Ongoing and not yet published.</li>
     </ul>
     <div class="tags"><span class="tag">VLM evaluation</span><span class="tag">GUI agents</span><span class="tag">multilingual</span><span class="tag">GLMM</span><span class="tag">bootstrap CI</span></div>
   </article>
@@ -70,9 +70,9 @@
   </article>
 
   <article class="card">
-    <h3>G-NOISE: XR Simulation of Urban-Noise Response Scenarios</h3>
+    <h3>G-NOISE: Exploring Urban Noise Responses in a Virtual City</h3>
     <div class="meta">Team leader, PM &amp; AI · Aug 2026 <span class="badge">Excellence Award</span></div>
-    <p>Led system planning and built the audio-event analysis — YAMNet embeddings with a multi-label classifier whose output is passed to an Unreal Engine XR scene as JSON. Teammates built the XR prototype.</p>
+    <p>An early digital-twin-style city block in Unreal Engine that reflects real urban noise recordings, where users compare noise barriers and traffic management before and after. I led system planning and trained the multi-label audio model on YAMNet embeddings; teammates built the Unreal environment. <a href="projects.html#g-noise">Demo frames and details →</a></p>
     <div class="tags"><span class="tag">audio classification</span><span class="tag">Unreal Engine</span><span class="tag">XR</span></div>
   </article>
 

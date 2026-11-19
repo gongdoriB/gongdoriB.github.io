@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Gihyun Bae</title>
+  <meta name="description" content="Gihyun Bae, undergraduate researcher at Chung-Ang University, studying human-AI interaction, sensor-based XR input, and evaluation of vision-language models.">
+  <script>try{const t=localStorage.getItem("theme");document.documentElement.classList.toggle("dark",t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches));}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/theme.js" defer></script>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">gihyun.bae</a>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" class="current" aria-current="page">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle dark mode">
+        <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <h1 class="page-title">Research</h1>
+  <div class="title-line"></div>
+  <p>Across projects I ask one question: when the input a person gives a system changes — a head movement, the language of a query, a piece of feedback — how does the system's response change, and where exactly does it fail? Preliminary results are marked as such.</p>
+
+  <h2>Projects</h2>
+
+  <article class="card">
+    <h3>Query–Interface Language Mismatch in Multilingual GUI Reasoning</h3>
+    <div class="meta">CUAI Advanced Track · two-person team, first author · Jul 2026 – present <span class="badge">Grand Prize</span></div>
+    <p>How badly does a vision-language model misread a GUI when the user's question and the on-screen text are in different languages, and where does the loss come from?</p>
+    <ul>
+      <li><strong>Initial study (summer 2026).</strong> A fully crossed 6×6 query–GUI language design over 2,195 MPR-GUI-Bench items with two VLMs, analysed with item-level GLMMs. The mismatch penalty concentrated in text-dependent relational reasoning (about 12%p) and was near zero for text-independent items. A two-stage localization method recovered part of it (+4.22%p, +8.80%p).</li>
+      <li><strong>Follow-up (Sep 2026 – present, preliminary).</strong> Query variants that change referent names and sentence language separately, across six languages and seven VLMs. Replacing only the referent names with on-screen text improved accuracy for all seven models (+4.7 to +12.0%p); changing only the sentence language slightly lowered it. Manuscript in preparation.</li>
+    </ul>
+    <div class="tags"><span class="tag">VLM evaluation</span><span class="tag">GUI agents</span><span class="tag">multilingual</span><span class="tag">GLMM</span><span class="tag">bootstrap CI</span></div>
+  </article>
+
+  <article class="card">
+    <h3>Answer Correction in Language Models Following User Feedback</h3>
+    <div class="meta">INC LAB · first author · Oct – Nov 2026 · submitted to DigiCon-26</div>
+    <p>Instructions that stop a model from caving to a wrong user claim (sycophancy) — do they also stop it from accepting a correct one?</p>
+    <ul>
+      <li>Split an anti-sycophancy instruction into its clauses and varied the rationale attached to the user's correction; Qwen3-8B on MMLU-Pro with paired item-bootstrap CIs.</li>
+      <li>The inhibition clause cut authority-backed wrong agreement from 77.4% to 40.4%, but also cut valid correction from 81.9% to 53.9%. Attaching a same-item rationale reduced this cost from 28.57 to 6.49 points.</li>
+    </ul>
+    <div class="tags"><span class="tag">sycophancy</span><span class="tag">human-AI interaction</span><span class="tag">LLM evaluation</span></div>
+  </article>
+
+  <article class="card">
+    <h3>HMD-Based Head-Gesture Recognition for Hands-Free XR Interaction</h3>
+    <div class="meta">INC LAB · first author, with teammates · 2026 <span class="badge">Gold Prize</span></div>
+    <p>Can the sensors already inside a headset provide a hands-free input channel for XR?</p>
+    <ul>
+      <li>Collected 1,440 three-second samples of six deliberate head gestures from eight participants with Meta Quest 3 orientation and angular-velocity signals (Unity, OpenXR).</li>
+      <li>Compared Random Forest, CNN1D and LSTM under leave-one-trial-out and leave-one-subject-out evaluation. CNN1D reached the highest Macro F1 in both (0.958 LOTO, 0.970 LOSO; mean of three seeds).</li>
+    </ul>
+    <div class="tags"><span class="tag">XR input</span><span class="tag">sensing</span><span class="tag">Meta Quest 3</span><span class="tag">time-series</span></div>
+  </article>
+
+  <article class="card">
+    <h3>G-NOISE: XR Simulation of Urban-Noise Response Scenarios</h3>
+    <div class="meta">Team leader, PM &amp; AI · Aug 2026 <span class="badge">Excellence Award</span></div>
+    <p>Led system planning and built the audio-event analysis — YAMNet embeddings with a multi-label classifier whose output is passed to an Unreal Engine XR scene as JSON. Teammates built the XR prototype.</p>
+    <div class="tags"><span class="tag">audio classification</span><span class="tag">Unreal Engine</span><span class="tag">XR</span></div>
+  </article>
+
+  <article class="card">
+    <h3>Fittory: Camera-Based Exercise Game</h3>
+    <div class="meta">Capstone design, team project · Sep 2026 – present</div>
+    <p>Developing the exercise-recognition module that turns webcam pose landmarks (MediaPipe) into game input through a temporal CNN, and its link to the team's Unreal Engine game.</p>
+    <div class="tags"><span class="tag">pose estimation</span><span class="tag">exergame</span></div>
+  </article>
+
+  <h2>Publications &amp; Presentations</h2>
+  <ol class="pubs">
+    <li><span class="me">G. Bae</span> and S. Lim. <span class="ptitle">Answer Correction in Language Models Following User Feedback: Effects of Anti-Sycophancy Instructions and Rationale Conditions.</span> <span class="venue">Submitted to DigiCon-26</span>, 2026.</li>
+    <li><span class="me">G. Bae</span>, S. Hong, H. Roh, J. Lee, and S. Lim. <span class="ptitle">HMD-Based Head-Gesture Recognition for Hands-Free XR Interaction: A Comparison of Random Forest, CNN1D, and LSTM.</span> <span class="venue">International Workshop on Cyber-Synergy (IWCS)</span>, 2026. Poster.</li>
+    <li><span class="me">G. Bae</span> and S. Lee. <span class="ptitle">Effects of Query–Interface Language Mismatch in Multilingual GUI Reasoning: Vulnerability and Selective Recovery of Text-Dependent Relational Reasoning.</span> <span class="venue">CUAI Summer Conference</span>, 2026. (In Korean; title translated.) <span class="badge">Grand Prize</span></li>
+    <li><span class="me">G. Bae</span> and S. Lim. <span class="ptitle">Designing an XR Interaction Input Method through Head-Movement Classification Using HMD Sensor Data.</span> <span class="venue">Korea Digital Contents Society Summer Conference</span>, 2026. (In Korean; title translated.) <span class="badge">Gold Prize</span></li>
+  </ol>
+</main>
+
+<footer>© <span id="year">2026</span> Gihyun Bae</footer>
+</body>
+</html>

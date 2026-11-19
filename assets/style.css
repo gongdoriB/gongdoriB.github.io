@@ -148,3 +148,4 @@ code { font-family: "JetBrains Mono", monospace; font-size: .85em; background: v
 .proj-row .proj-thumb { flex: 0 0 38%; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--border); background: #fff; }
 .proj-row .proj-thumb img { object-fit: contain; object-position: center; padding: .6rem; }
 @media (max-width: 640px) { .proj-row { flex-direction: column; } .proj-row .proj-thumb { aspect-ratio: 16/10; border-right: 0; border-bottom: 1px solid var(--border); } }
+.group-h { font-family: "JetBrains Mono", monospace; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 2rem 0 .8rem; }

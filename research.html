@@ -38,9 +38,33 @@
 <main>
   <h1 class="page-title">Research</h1>
   <div class="title-line"></div>
-  <p>My research is about human-AI interaction, approached from two sides: <strong>XR interaction</strong>, where systems take input from how people move and let them explore real-world data, and <strong>language and multimodal models</strong>, where I study how models understand and respond to users. Across both, I look at what happens when the input a person gives a system changes, and where exactly the system fails.</p>
+  <p>My research is about human-AI interaction, approached from two sides: <strong>language and multimodal models</strong>, where I study how models understand and respond to users and where most of my recent work lies, and <strong>XR interaction</strong>, where systems take input from how people move and let them explore real-world data. Across both, I look at what happens when the input a person gives a system changes, and where exactly the system fails.</p>
 
   <h2>Projects</h2>
+
+  <h3 class="group-h">Language &amp; Multimodal Models</h3>
+
+  <article class="card">
+    <h3>Query–Interface Language Mismatch in Multilingual GUI Reasoning</h3>
+    <div class="meta">CUAI Advanced Track · two-person team, first author · Jul 2026 – present <span class="badge">Grand Prize</span></div>
+    <p>How badly does a vision-language model misread a GUI when the user's question and the on-screen text are in different languages, and where does the loss come from?</p>
+    <ul>
+      <li><strong>Initial study (summer 2026).</strong> A fully crossed 6×6 query–GUI language design over 2,195 MPR-GUI-Bench items with Qwen2.5-VL-7B and InternVL2.5-8B, analysed with item-level GLMMs. The mismatch penalty concentrated in text-dependent relational reasoning (about 12%p) and was near zero for text-independent items. A two-stage localization method recovered part of it (+4.22%p, +8.80%p).</li>
+      <li><strong>Follow-up (Sep 2026 – present).</strong> Extending the study to six languages and seven VLMs, separating the effects of on-screen referent names from sentence language, and comparing machine-translated queries with queries that use on-screen names. Ongoing and not yet published.</li>
+    </ul>
+    <div class="tags"><span class="tag">VLM evaluation</span><span class="tag">GUI agents</span><span class="tag">multilingual</span><span class="tag">GLMM</span><span class="tag">bootstrap CI</span></div>
+  </article>
+
+  <article class="card">
+    <h3>Answer Correction in Language Models Following User Feedback</h3>
+    <div class="meta">INC LAB · first author · Oct – Nov 2026 · accepted to DigiCon-26 (to appear) · recommended for the Best Paper Award by both reviewers</div>
+    <p>Instructions that stop a model from caving to a wrong user claim (sycophancy) — do they also stop it from accepting a correct one?</p>
+    <ul>
+      <li>Split an anti-sycophancy instruction into its clauses and varied the rationale attached to the user's correction; Qwen3-8B on MMLU-Pro with paired item-bootstrap CIs.</li>
+      <li>The inhibition clause cut authority-backed wrong agreement from 77.4% to 40.4%, but also cut valid correction from 81.9% to 53.9%. Attaching a same-item rationale reduced this cost from 28.6 to 6.5 percentage points.</li>
+    </ul>
+    <div class="tags"><span class="tag">sycophancy</span><span class="tag">human-AI interaction</span><span class="tag">LLM evaluation</span></div>
+  </article>
 
   <h3 class="group-h">XR Interaction</h3>
 
@@ -69,33 +93,9 @@
     <div class="tags"><span class="tag">pose estimation</span><span class="tag">exergame</span></div>
   </article>
 
-  <h3 class="group-h">Language &amp; Multimodal Models</h3>
-
-  <article class="card">
-    <h3>Query–Interface Language Mismatch in Multilingual GUI Reasoning</h3>
-    <div class="meta">CUAI Advanced Track · two-person team, first author · Jul 2026 – present <span class="badge">Grand Prize</span></div>
-    <p>How badly does a vision-language model misread a GUI when the user's question and the on-screen text are in different languages, and where does the loss come from?</p>
-    <ul>
-      <li><strong>Initial study (summer 2026).</strong> A fully crossed 6×6 query–GUI language design over 2,195 MPR-GUI-Bench items with Qwen2.5-VL-7B and InternVL2.5-8B, analysed with item-level GLMMs. The mismatch penalty concentrated in text-dependent relational reasoning (about 12%p) and was near zero for text-independent items. A two-stage localization method recovered part of it (+4.22%p, +8.80%p).</li>
-      <li><strong>Follow-up (Sep 2026 – present).</strong> Extending the study to six languages and seven VLMs, separating the effects of on-screen referent names from sentence language, and comparing machine-translated queries with queries that use on-screen names. Ongoing and not yet published.</li>
-    </ul>
-    <div class="tags"><span class="tag">VLM evaluation</span><span class="tag">GUI agents</span><span class="tag">multilingual</span><span class="tag">GLMM</span><span class="tag">bootstrap CI</span></div>
-  </article>
-
-  <article class="card">
-    <h3>Answer Correction in Language Models Following User Feedback</h3>
-    <div class="meta">INC LAB · first author · Oct – Nov 2026 · submitted to DigiCon-26</div>
-    <p>Instructions that stop a model from caving to a wrong user claim (sycophancy) — do they also stop it from accepting a correct one?</p>
-    <ul>
-      <li>Split an anti-sycophancy instruction into its clauses and varied the rationale attached to the user's correction; Qwen3-8B on MMLU-Pro with paired item-bootstrap CIs.</li>
-      <li>The inhibition clause cut authority-backed wrong agreement from 77.4% to 40.4%, but also cut valid correction from 81.9% to 53.9%. Attaching a same-item rationale reduced this cost from 28.57 to 6.49 points.</li>
-    </ul>
-    <div class="tags"><span class="tag">sycophancy</span><span class="tag">human-AI interaction</span><span class="tag">LLM evaluation</span></div>
-  </article>
-
   <h2>Publications &amp; Presentations</h2>
   <ol class="pubs">
-    <li><span class="me">G. Bae</span> and S. Lim. <span class="ptitle">Answer Correction in Language Models Following User Feedback: Effects of Anti-Sycophancy Instructions and Rationale Conditions.</span> <span class="venue">Submitted to DigiCon-26</span>, 2026.</li>
+    <li><span class="me">G. Bae</span> and S. Lim. <span class="ptitle">Answer Correction in Language Models Following User Feedback: Effects of Anti-Sycophancy Instructions and Rationale Conditions.</span> <span class="venue">DigiCon-26</span>, 2026 (accepted, to appear). Recommended for the Best Paper Award by both reviewers.</li>
     <li><span class="me">G. Bae</span>, S. Hong, H. Roh, J. Lee, and S. Lim. <span class="ptitle">HMD-Based Head-Gesture Recognition for Hands-Free XR Interaction: A Comparison of Random Forest, CNN1D, and LSTM.</span> <span class="venue">International Workshop on Cyber-Synergy (IWCS)</span>, 2026. Poster.</li>
     <li><span class="me">G. Bae</span> and S. Lee. <span class="ptitle">Effects of Query–Interface Language Mismatch in Multilingual GUI Reasoning: Vulnerability and Selective Recovery of Text-Dependent Relational Reasoning.</span> <span class="venue">CUAI Summer Conference</span>, 2026. (In Korean; title translated.) <span class="badge">Grand Prize</span></li>
     <li><span class="me">G. Bae</span> and S. Lim. <span class="ptitle">Designing an XR Interaction Input Method through Head-Movement Classification Using HMD Sensor Data.</span> <span class="venue">Korea Digital Contents Society Summer Conference</span>, 2026. (In Korean; title translated.) <span class="badge">Gold Prize</span></li>

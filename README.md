@@ -1,6 +1,6 @@
 # gongdoriB.github.io
 
-Personal website of **Gihyun Bae (배기현)** — undergraduate researcher at Chung-Ang University (Art and Technology · Cybersecurity), working on human-AI interaction across language & multimodal models and XR interaction.
+Personal website of **Gihyun Bae (배기현)** — undergraduate researcher at Chung-Ang University (Art and Technology · Cybersecurity), working on language & multimodal models, particularly in human-AI interaction, plus XR interaction.
 
 🔗 **https://gongdorib.github.io**
 
